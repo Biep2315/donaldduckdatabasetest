@@ -1,0 +1,196 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filters-container {
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;           /* Zorg ervoor dat het niet verkleint op mobiel */
+    height: auto;
+    max-height: 25vh;       /* Zorg ervoor dat de filtercontainer maximaal 25% van de schermhoogte is */
+    overflow-y: auto;         /* Sta verticaal scrollen toe als de inhoud te groot is */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Pas filters-styling aan om uitlijning en ruimte beter te regelen */
+.filters {
+    display: flex;
+    justify-content: center; /* Center de filters */
+    flex-wrap: wrap;         /* Breek naar een nieuwe regel als nodig */
+    gap: 10px;               /* Meer ruimte tussen filter-items */
+    align-items: center;
+    max-width: 1200px;       /* Beperk de breedte van de filters */
+    margin: 0 auto;          /* Centreer de filters in de container */
+}
+
+.filters label {
+    margin-right: 5px;       /* Minder ruimte tussen label en input/select */
+    white-space: nowrap;     /* Zorg ervoor dat labels op één regel blijven */
+}
+
+.filters select, .filters input {
+    padding: 8px;
+    width: 120px;            /* Iets smallere breedte voor betere uitlijning */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.table-container {
+    width: 80%;
+    max-width: 1200px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+/* Media queries voor mobielvriendelijkere weergave */
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column; /* Zet filters onder elkaar op kleinere schermen */
+        align-items: stretch;   /* Zorg dat ze de hele breedte innemen */
+    }
+
+    .filters label {
+        margin-bottom: 5px;      /* Wat ruimte tussen label en input */
+    }
+
+    .filters select, .filters input {
+        width: 100%;             /* Maak de invoervelden breder op mobiele schermen */
+        margin-bottom: 10px;     /* Ruimte tussen velden */
+    }
+
+    button {
+        width: 100%;             /* Maak de knop breed voor betere drukbaarheid op mobiel */
+    }
+
+    .table-container {
+        width: 100%;             /* Maak de tabelcontainer breder op kleinere schermen */
+        padding: 10px;           /* Verminder de padding voor kleinere schermen */
+    }
+
+    table th, table td {
+        padding: 8px;            /* Verminder de padding van tabelcellen voor kleinere schermen */
+    }
+}
+
+@media (max-width: 480px) {
+    .filters {
+        gap: 10px;              /* Verminder de ruimte tussen de filters */
+    }
+
+    h1 {
+        font-size: 18px;        /* Maak de titel iets kleiner op kleine schermen */
+    }
+}
+
+/* Modernized styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #1f4037, #99f2c8);
+    color: #333;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.filters-container {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #fff;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.table-container {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 15px;
+    margin-top: 25px;
+    overflow-x: auto;
+}
+
+table th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Smooth animations */
+.filters-container, .table-container {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
